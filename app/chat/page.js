@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useParams, useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
 
-require('dotenv').config();
+require("dotenv").config();
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
@@ -37,8 +37,8 @@ export default function Chat() {
           <div className={"systemMessage"} key={i}>
             <div className="messageContent">
               <Image
-                alt="Doctor image"
-                src={"/doctor.png"}
+                alt="teacher image"
+                src={"/teacher.png"}
                 height={30}
                 width={30}
                 style={{
@@ -63,8 +63,8 @@ export default function Chat() {
             <div className="messageContent">
               {m.role === "assistant" && (
                 <Image
-                  alt="Doctor image"
-                  src={"/doctor.png"}
+                  alt="Teacher image"
+                  src={"/teacher.png"}
                   height={30}
                   width={30}
                   style={{

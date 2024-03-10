@@ -4,7 +4,7 @@ import React from "react";
 
 export const SpecialistCard = ({ name, description, title }) => {
   return (
-    <div className="min-h-[200px]  p-[1.6rem] shadow-lg rounded-md bg-gray-600 flex flex-col justify-center items-center">
+    <div className="min-h-[250px] p-[1.6rem] py-[2rem] shadow-lg rounded-md bg-gray-600 flex flex-col justify-center items-center">
       <div className="h-[50px] w-[50px]">
         <Image
           alt="Teacher image"
