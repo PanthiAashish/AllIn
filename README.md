@@ -1,4 +1,5 @@
-# GPT Disease Interpreter
+# GPT Problem solver
+
 # I made this project for the All in for students hackathon. This uses OpenAI's API to provide specialized response to the health issues of the user.
 
 ## Installing Dependencies

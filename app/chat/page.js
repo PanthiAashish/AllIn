@@ -3,11 +3,15 @@ import { useChat } from "ai/react";
 import Image from "next/image";
 import { useParams, useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
+import { useUser } from "@auth0/nextjs-auth0/client";
+import Link from "next/link";
 
 require("dotenv").config();
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
+
+  const { user, isLoading } = useUser();
 
   const urlParams = useSearchParams();
 
@@ -24,6 +28,18 @@ export default function Chat() {
         messageContainerRef.current.scrollHeight
       );
   }, [messages]);
+
+  if (!user)
+    return (
+      <div className="min-h-screen flex items-center flex-col justify-center">
+        <p className="text-3xl font-bold text-red-500">Unauthorized</p>
+        <Link href="/">
+          <button className="border rounded-md px-10 py-1 mt-2 hover:bg-white hover:text-black transition-all cursor-pointer">
+            Home
+          </button>
+        </Link>
+      </div>
+    );
 
   if (!title || !description || !name) return <p>Invalid URL.</p>;
 
